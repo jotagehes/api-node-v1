@@ -1,8 +1,7 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-
-const app = express();
-const port = 3000;
+const bodyParser = require('body-parser')
+const express = require('express')
+const app = express()
+const port = process.env.Port || 5000
 
 app.use(bodyParser.json());
 
@@ -62,6 +61,6 @@ app.delete('/produtos/:id', (req, res) => {
   }
 });
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`API está rodando em http://0.0.0.0:${port}`);
-});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
